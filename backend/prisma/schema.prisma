@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" //使用SQLite
+  url      = env("DATABASE_URL") //檔案讀取資料庫路徑
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement()) //自動增加數字ID
+  email     String   @unique //Email
+  name      String?
+  password  String   //密碼
+  cafes     Cafe[]   //一個使用者可以建立多個咖啡廳地點 
+  createdAt DateTime @default(now())
+}
+
+
+model Cafe {
+  id          Int      @id @default(autoincrement())
+  title       String   //名稱
+  description String?  //描述
+  address     String   //地址
+  latitude    Float    //緯度
+  longitude   Float    //經度
+  category    String?  //分類
+
+  imageUrl      String?
+  googleMapsUrl String?
+
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

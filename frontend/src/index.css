@@ -1,0 +1,61 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #f4f4f4; /* 淡灰色背景 */
+}
+
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+}
+
+
+
+
+.info-window-content {
+  color: black;
+  padding: 5px;
+  min-width: 250px;
+}
+
+.info-window-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.info-window-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+.info-window-content p {
+  margin: 4px 0;
+}
+.info-address {
+  font-size: 0.9rem;
+  color: #555;
+}
+.info-author {
+  font-size: 0.8rem;
+  color: #777;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.info-window-link {
+  display: block;
+  margin-bottom: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+.info-window-link:hover {
+  text-decoration: underline;
+}
+.info-window-actions {
+  margin-top: 10px;
+}
